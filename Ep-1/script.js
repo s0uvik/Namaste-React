@@ -1,27 +1,30 @@
-import React from "react"
-import  ReactDOM  from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
+// React.createElement => Object => after render()=> HTMLElement
+// this is core react
+// this is not developer friendly
+//this is react element
+const heading = React.createElement("h1", { id: "heading" }, "This is Souvik");
+console.log(heading);
 
+//JSX (transpile before it reaches JS engine)=> PARCEL => Babel
+//JSX =>(Babel conversion)=> React.createElement => ReactElement (JS-Object) => after render()=> HTMLElement
+const jsxHeading = <h1>Souvik is here using jsx </h1>;
+console.log(jsxHeading);
 
-const heading = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Let's learn React"
-);
+//this is react element
+const headingElement = <h1>This is heading from React element</h1>;
 
-const htmlComponent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement(
-    "div",
-    { id: "child" },
-    [React.createElement("h1", { id: "heading" }, "Let's learn React Namaste React"),
-    React.createElement("h2", { id: "heading" }, "Let's learn React")]
-  )
-);
-// for creating sibling element we have to wrap componets into an array
+//this is react component
+const HeadingComponent = () => {
+  return (
+    <>
+      {headingElement}
+      <h1>This is heading from component</h1>
+    </>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(heading);
-root.render(htmlComponent);
-
+root.render(<HeadingComponent />);
