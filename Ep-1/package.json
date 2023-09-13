@@ -1,0 +1,32 @@
+{
+  "name": "ep-1",
+  "version": "1.0.0",
+  "description": "This is Namaste React course",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s0uvik/Namaste-React.git"
+  },
+  "keywords": [
+    "react",
+    "namaste-react"
+  ],
+  "author": "Souvik Sarkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s0uvik/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/s0uvik/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
