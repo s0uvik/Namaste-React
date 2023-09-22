@@ -1,30 +1,51 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React.createElement => Object => after render()=> HTMLElement
-// this is core react
-// this is not developer friendly
-//this is react element
-const heading = React.createElement("h1", { id: "heading" }, "This is Souvik");
-console.log(heading);
+import "./style.css";
 
-//JSX (transpile before it reaches JS engine)=> PARCEL => Babel
-//JSX =>(Babel conversion)=> React.createElement => ReactElement (JS-Object) => after render()=> HTMLElement
-const jsxHeading = <h1>Souvik is here using jsx </h1>;
-console.log(jsxHeading);
+import About from "./src/pages/About";
+import Error from "./src/pages/Error";
+import Contact from "./src/pages/Contact";
 
-//this is react element
-const headingElement = <h1>This is heading from React element</h1>;
+import Body from "./src/components/Body";
+import Header from "./src/components/Header";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import RestaurantMenu from "./src/pages/ResturantMenu";
 
-//this is react component
-const HeadingComponent = () => {
+const App = () => {
   return (
-    <>
-      {headingElement}
-      <h1>This is heading from component</h1>
-    </>
+    <div>
+      <Header />
+      <Outlet />
+    </div>
   );
 };
 
+const routing = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />,
+      },
+    ],
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent />);
+root.render(<RouterProvider router={routing} />);
