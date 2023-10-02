@@ -4,7 +4,7 @@ const LOGO_IMAGE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAAB+CAMAAA
 
 const IMAGE_MEDIA = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
-const RESTAURANTS_DATA_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2616066&lng=87.8487286&restaurantId="
+const RESTAURANTS_DATA_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2616066&lng=87.8487286&restaurantId=373544"
 
 
 

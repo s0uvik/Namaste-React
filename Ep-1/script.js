@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useContext, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 import "./style.css";
@@ -12,14 +12,19 @@ import Header from "./src/components/Header";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import RestaurantMenu from "./src/pages/ResturantMenu";
 
+import UserContext from "./src/utils/context";
+
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
 const App = () => {
+  const [userName, setUserName] = useState("Souvik")
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{loggedInUser: userName, setUserName}} >
+      <div>
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
@@ -27,7 +32,6 @@ const routing = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />,
     children: [
       {
         path: "/about",
@@ -54,6 +58,7 @@ const routing = createBrowserRouter([
         ),
       },
     ],
+    errorElement: <Error />,
   },
 ]);
 

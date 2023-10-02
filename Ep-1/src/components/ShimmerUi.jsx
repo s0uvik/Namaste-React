@@ -1,29 +1,20 @@
 const ShimmerUi = () => {
   return (
-    <div className="shimmer-ui">
-      <div className="shimmer-card">
+    <div className=" flex flex-wrap mt-12 justify-center items-center gap-3">
+      <div className=" w-[200px] h-[350px] bg-gray-500 animate-pulse" >
       </div>
-      <div className="shimmer-card">
+      <div className=" w-[200px] h-[350px] bg-gray-500 animate-pulse" >
       </div>
-      <div className="shimmer-card">
+      <div className=" w-[200px] h-[350px] bg-gray-500 animate-pulse" >
       </div>
-      <div className="shimmer-card">
+      <div className=" w-[200px] h-[350px] bg-gray-500 animate-pulse" >
       </div>
-      <div className="shimmer-card">
+      <div className=" w-[200px] h-[350px] bg-gray-500 animate-pulse" >
       </div>
-      <div className="shimmer-card">
+      <div className=" w-[200px] h-[350px] bg-gray-500 animate-pulse" >
       </div>
-      <div className="shimmer-card">
+      <div className=" w-[200px] h-[350px] bg-gray-500 animate-pulse" >
       </div>
-      <div className="shimmer-card">
-      </div>
-      <div className="shimmer-card">
-      </div>
-      <div className="shimmer-card">
-      </div>
-      <div className="shimmer-card">
-      </div>
-   
     </div>
   );
 };

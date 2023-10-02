@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/context";
 
 class User extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class User extends React.Component {
         avatar_url: "",
       },
     };
-    console.log("constructor")
+    console.log("constructor");
   }
 
   async componentDidMount() {
@@ -21,7 +22,7 @@ class User extends React.Component {
     this.setState({
       userInfo: data,
     });
-    console.log("componentDidMount")
+    console.log("componentDidMount");
   }
 
   componentDidUpdate() {
@@ -34,11 +35,14 @@ class User extends React.Component {
 
   render() {
     const { name, location, login, avatar_url } = this.state.userInfo;
-    
-    console.log("render")
+
+    console.log("render");
     return (
       <div className="user-card">
         <img src={avatar_url} alt="" />
+        <UserContext.Consumer>
+          {(data) => <h1>{data.loggedInUser}</h1>}
+        </UserContext.Consumer>
         <div>
           <h1>Name: {name}</h1>
           <h3>Location: {location}</h3>
